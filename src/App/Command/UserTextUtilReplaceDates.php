@@ -64,6 +64,7 @@ class UserTextUtilReplaceDates implements UserTextUtilAction
      */
     private function replaceDatesByPersonId($personId)
     {
+        // todo: дублирование. Возможно стоит вынести в другой класс
         $dirListing = DirHelper::getDirListing($this->pathPeopleTextSource);
         $personsFiles = array_filter(
             $dirListing,
