@@ -120,6 +120,8 @@ class UserTextUtilReplaceDates implements UserTextUtilAction
 
             fwrite($fpOutput, $line);
         }
+        fclose($fp);
+        fclose($fpOutput);
 
         return $count;
     }
