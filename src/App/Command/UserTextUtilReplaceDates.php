@@ -108,7 +108,7 @@ class UserTextUtilReplaceDates implements UserTextUtilAction
             $line = preg_replace_callback(
                 '|(\d{2})/(\d{2})/(\d{2})|',
                 function ($matches) use(&$count){
-                    $time = mktime(null, null, null, $matches[2], $matches[1], $matches[3]);
+                    $time = mktime(null, null, null, $matches[1], $matches[2], $matches[3]);
                     if (!$time) {
                         return $matches[0];
                     }
