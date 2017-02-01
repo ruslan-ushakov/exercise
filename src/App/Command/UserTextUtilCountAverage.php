@@ -57,6 +57,7 @@ class UserTextUtilCountAverage implements UserTextUtilAction
     private function getAverageTextLinesByPersonId($personId)
     {
         $dirListing = DirHelper::getDirListing($this->pathPeopleTextSource);
+        // todo: можно не бегать каждый раз по полному списку, а уменьшать кол-во элементов после каждой фильтрации.
         $personsFiles = array_filter(
             $dirListing,
             function ($dirName) use ($personId){
